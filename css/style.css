@@ -12,6 +12,21 @@ img {
   display: block;
   max-width: 100%;
 }
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: rgb(26, 25, 25);
+}
+
+.slide-container {
+  width: 1200px;
+  padding: 2rem 0rem;
+  background-color: rgb(253, 236, 213);
+  border-radius: 10px;
+}
 
 .slide-wrapper {
   overflow: hidden;
@@ -68,9 +83,10 @@ img {
   justify-content: center;
   flex-wrap: wrap;
 
-  margin: 40px 0px 20px 0px;
+  margin: 0px 0px 20px 0px;
 }
 .custom-controls li {
+  cursor: pointer;
   opacity: 0.8;
   transform: scale(0.8);
   width: 40px;
@@ -79,6 +95,11 @@ img {
   overflow: hidden;
   margin: 2px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+.custom-controls li:hover {
+  opacity: 0.85;
+  transform: scale(0.85);
 }
 .custom-controls li.active {
   opacity: 1;
@@ -93,10 +114,16 @@ img {
   cursor: pointer;
   border: 0;
   border-radius: 5px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background: rgb(241, 153, 20) url('../img/arrow.svg') center center no-repeat;
+  margin-top: 20px;
+  background-size: 10px;
+  transition: 0.25s;
 }
 .arrow-nav button.prev {
   transform: rotate(180deg);
+}
+.arrow-nav button:hover {
+  background-color: rgb(209, 132, 16);
 }
