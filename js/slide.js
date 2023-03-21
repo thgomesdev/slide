@@ -7,9 +7,11 @@ export class Slide {
     this.dist = { finalPosition: 0, startX: 0, movement: 0 };
     this.activeClass = 'active';
     this.changeEvent = new Event('changeEvent');
+    this.transition(true);
+    this.onResize();
   }
 
-  transititon(active) {
+  transition(active) {
     this.slide.style.transition = active ? 'transform .3s' : '';
   }
 
@@ -33,7 +35,7 @@ export class Slide {
     }
 
     this.wrapper.addEventListener(this.movetype, this.onMove);
-    this.transititon(false);
+    this.transition(false);
   }
 
   moveSlide(distX) {
@@ -49,7 +51,7 @@ export class Slide {
   onEnd() {
     this.wrapper.removeEventListener(this.movetype, this.onMove);
     this.dist.finalPosition = this.dist.lastPosition;
-    this.transititon(true);
+    this.transition(true);
     this.changeSlideOnEnd();
   }
 
